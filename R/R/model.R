@@ -1205,7 +1205,7 @@ hyper_collector <- function(InputCollect, hyper_in, ts_validation, add_penalty_f
 
   # Add penalty factor hyper-parameters names
   for_penalty <- names(select(InputCollect$dt_mod, -.data$ds, -.data$dep_var))
-  if (add_penalty_factor) hypParamSamName <- c(hypParamSamName, paste0("penalty_", for_penalty))
+  if (add_penalty_factor) hypParamSamName <- c(hypParamSamName, paste0(for_penalty, "_penalty"))
 
   # Check hyper_fixed condition + add lambda + penalty factor hyper-parameters names
   all_fixed <- check_hyper_fixed(InputCollect, dt_hyper_fixed, add_penalty_factor)
